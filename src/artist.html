@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Latest project — Ólafur Arnalds</title>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description" content="Discover Ólafur Arnalds, an Icelandic neo-classist composer.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ólafur Arnalds">
+  <meta name="twitter:description" content="Discover Ólafur Arnalds, an Icelandic neo-classist composer.">
+  <meta name="twitter:image" content="http://nell-maissin.be/projets/musicplz/assets/images/twitter_image.jpg">
+
+  <meta property="og:site_name" content="Ólafur Arnalds" />
+  <meta property="og:title" content="Ólafur Arnalds" />
+  <meta property="og:description" content="Discover Ólafur Arnalds, an Icelandic neo-classist composer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="http://nell-maissin.be/projets/musicplz/index.html" />
+  <meta property="og:image" content="http://nell-maissin.be/projets/musicplz/images/og_image.jpg"/>
+  <meta property="og:image:width" content="1800">
+  <meta property="og:image:height" content="945">
+
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/images/Logo--small.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="manifest" href="assets/images/site.webmanifest">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" href="styles/app.css">
+
+  <script src="scripts/three.min.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body class="body body--noline">
+  <header class="header">
+    <div class="header__container">
+        <a class="header__logo" href="index.html"><img src="assets/images/Logo--full.svg" alt="Logo of Arnalds."></a>
+        <nav class="nav">
+            <ul class="menu menu--invisible">
+                <li class="menu__el"><a class="link" href="index.html">Home</a></li>
+                <li class="menu__el"><a class="link" href="about.html">About</a></li>
+                <li class="menu__el"><a class="link" href="artist.html">Artist</a></li>
+            </ul>
+            <button id="burger" class="nav__btn"></button>
+        </nav>
+    </div>
+  </header>
+
+  <canvas class="canvas"></canvas>
+
+
+  <main class="content">
+    <section class="cubesContent cubesContent--first">
+      <h1 class="title title--huge">Ólafur Arnalds</h1>
+      <p>Discover his latest project…</p>
+    </section>
+  
+    <section class="cubesContent cubesContent--row">
+      <div class="cubesContent--top">
+        <h2 class="title title--huge">New album</h2>
+        <h3 class="title title--small">some kind of peace</h3>
+      </div>
+      <img class="cubesContent__img" src="assets/images/cover@1x.jpg"
+          alt="Ólafur Arnalds' new album, called some kind of peace."
+          srcset="assets/images/cover@1x.jpg,
+          assets/images/cover@2x.jpg 2x">
+    </section>
+  
+    <section>
+      <ul>
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/loom.mp3"></audio>
+          </div>
+          <h3 class="title title--big">01. Loom</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/woven_song.mp3"></audio>
+          </div>
+          <h3 class="title title--big">02. Woven Song</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/spiral.mp3"></audio>
+          </div>
+          <h3 class="title title--big">03. Spiral</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/still_sound.mp3"></audio>
+          </div>
+          <h3 class="title title--big">04. Still / Sound</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/back_to_the_sky.mp3"></audio>
+          </div>
+          <h3 class="title title--big">05. Back To The Sky</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/zero.mp3"></audio>
+          </div>
+          <h3 class="title title--big">06. Zero</h3>
+        </li>        
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/new_grass.mp3"></audio>
+          </div>
+          <h3 class="title title--big">07. New Grass</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/the_bottom_line.mp3"></audio>
+          </div>
+          <h3 class="title title--big">08. The Bottom Line</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/we_contain_multitudes.mp3"></audio>
+          </div>
+          <h3 class="title title--big">09. We Contain Multitudes</h3>
+        </li>
+
+        <li class="cubesContent">
+          <div class="player player--block">
+            <audio loop src="assets/son/album/undone.mp3"></audio>
+          </div>
+          <h3 class="title title--big">10. Undone</h3>
+        </li>
+      </ul>
+    </section>
+
+    <section class="cubesContent">
+      <h2 class="title title--huge">Get the album now.</h2>
+      <a class="btn" target="_blank" href="https://www.amazon.fr/Some-Kind-Peace-%C3%93lafur-Arnalds/dp/B08GFX5HK4">Buy some kind of peace</a>
+    </section>
+    
+  </main>
+
+  <div class="pageTransition"></div>
+
+  
+
+  <footer class="footer">
+    <div class="footer__container">
+        <div class="footer__column--mobile">
+            <div class="footer__column">
+                <h2 class="title title--small">Pages</h2>
+                <ul class="linksList">
+                    <li class="linksList__el"><a class="link" href="index.html">Home</a></li>
+                    <li class="linksList__el"><a class="link" href="artist.html">Artist</a></li>
+                    <li class="linksList__el"><a class="link" href="about.html">About</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer__column">
+                <h2 class="title title--small">Other</h2>
+                <ul class="linksList">
+                    <li class="linksList__el"><a href="http://nell-maissin.be/projets/musicplz/assets/images/UI-Kit.jpg">UI-Kit</a></li>
+                    <li class="linksList__el"><a href="https://medium.com/@nellmaissin/credits-f3adc558c847?source=friends_link&sk=73e4c35d955904b63dbba63a11d6cac6">Credits</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <p class="footer__column">Coypyright 2022 © <a href="http://nell-maissin.be">Nell MAISSIN</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

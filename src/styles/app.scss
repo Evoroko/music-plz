@@ -1,0 +1,362 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+
+@import 'utils/variables';
+@import 'components/type';
+@import 'components/nav';
+@import 'components/footer';
+@import 'components/scrollbar';
+@import 'components/grid';
+@import 'components/album';
+@import 'components/artists';
+@import 'components/cubes';
+
+.body{
+    background: rgb(8,21,38);
+    background: linear-gradient(173deg, rgba(8,21,38,1) 0%, rgba(48,89,115,1) 78%, rgba(217,202,173,1) 100%);
+    color: white;
+
+    @media(min-width: 992px){
+        &::before{
+            content: "";
+            width: 1px;
+            height: 100%;
+            z-index: 10;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            background-color: $c-text;
+            transform: translateX(241px);
+            opacity: 0.5;
+        }
+
+        &--noline{
+            &::before{
+                content: none;
+            }
+        }
+    }
+
+    &--noline{
+        background: rgb(8,21,38);
+        background: linear-gradient(242deg, rgba(8,21,38,1) 0%, rgba(8,21,38,1) 50%, rgba(48,89,115,1) 100%);
+    }
+
+    @media(min-width: 1232px){
+        &::before{
+            transform: translateX(296px);
+        }
+
+    }
+}
+
+.canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.content--noanim, .content{
+    padding: 0 16px;
+    max-width: 500px;
+    margin: auto;
+
+    @media(min-width: 992px){
+        padding: 0;
+        max-width: 976px;
+        margin: auto;
+    }
+
+    @media(min-width: 1232px){
+        max-width: 1200px;
+    }
+
+    & > * {
+        margin-bottom: 16px;
+    }
+}
+
+.section{
+    position: relative;
+    margin-bottom: 80px;
+
+    @media(min-width: 992px){
+        margin-bottom: 160px;
+    }
+
+    &--top{
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-image: url(../assets/images/olafur@1x.jpg);
+        background-position: 30% center;
+        background-size: cover;
+
+        @media(-webkit-device-pixel-ratio: 2){
+            background-image: url(../assets/images/olafur@2x.jpg);
+        }
+
+        @media(min-width: 992px){
+            position: relative;
+            justify-content: center;
+      
+            &::before{
+              content: "";
+              max-width: 976px;
+              width: 80%;
+              height: 70%;
+              left: 50%;
+              transform: translateX(-50%);
+              position: absolute;
+              border: 1px solid white;
+            }
+        }
+
+        @media(min-width: 1232px){
+      
+            &::before{
+              max-width: 1200px;
+            }
+        }
+        
+    }
+
+    
+
+    &--bottom{
+        margin-bottom: 240px;
+    }
+
+    &__container{
+
+        &--top{
+        width: 90%;
+
+            @media(min-width: 992px){
+                margin-left: 300px;
+            }
+        }
+    }
+
+    &--basic{
+        padding-top: 28px;
+        padding-bottom: 32px;
+        border: 1px solid $c-text;
+        width: 100%;
+        margin: 96px auto 80px auto;
+        text-align: center;
+
+        @media(min-width: 992px){
+            margin-bottom: 160px;
+        }
+    }
+}
+
+.img{
+    text-align: center;
+    position: relative;
+    z-index: 11;
+    margin: 32px 0;
+
+    & img{
+        width: 100%;
+        max-width: 300px;
+    }
+
+    &__caption{
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-style: italic;
+    }
+
+    @media(min-width: 992px){
+        margin: 0 0 32px 0;
+    }
+}
+
+.quote{
+    margin: 32px 0;
+    padding-left: 32px;
+    border-left: 3px solid $c-text;
+
+    &__txt{
+        margin-bottom: 8px;
+        font-style: italic;
+
+        &::before{
+            content: "“";
+            margin-left: -10px;
+            padding-right: 2px;
+        }
+
+        &::after{
+            content: "”";
+        }
+    }
+
+    &__name{
+        text-align: right;
+    }
+}
+
+.btn{
+    background-color: $c-dark;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    padding: 16px;
+    transition: .2s;
+
+    &:hover{
+        background-color: $c-turtle;
+    }
+
+    &--top{
+        max-width: max-content;
+        margin: auto;
+    }
+}
+
+.artists{
+    margin-bottom: 128px;
+}
+
+.animationLanding{
+    position: fixed;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: $c-turtle;
+    animation-name: pageOpens;
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+    
+
+    &__video{
+        min-width: 100%;
+        min-height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    &__title{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 101;
+        transform: translate(-50%, -50%);
+        animation-name: titleOpens;
+        animation-duration: 5s;
+        animation-delay: .5s;
+        animation-fill-mode: forwards;
+        opacity: 0;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}
+
+@keyframes pageOpens{
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+}
+
+@keyframes titleOpens{
+    0% {
+        letter-spacing: normal;
+        opacity: 0;
+    }
+    100%{
+        letter-spacing: 0.2em;
+        opacity: 1;
+    }
+}
+
+.pageTransition{
+    height: 200vh;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 300;
+    touch-action: none;
+    opacity: 1;
+    visibility: visible;
+    background-color: $c-turtle;
+    transform: translateX(0%);
+    animation-delay: .2s;
+    animation-name: pageTransitionExit;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+
+    &--shorter{
+        animation-delay: 0s;
+    }
+
+    &--beforeExit{
+        animation-name: pageTransition;
+        animation-duration: .5s;
+        animation-delay: 0s;
+    }
+}
+
+@keyframes pageTransition{
+    0%{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pageTransitionExit{
+    0%{
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-100%);
+    }
+}

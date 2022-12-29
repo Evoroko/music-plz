@@ -1,0 +1,36 @@
+.grid--left{
+    & > * {
+        margin-bottom: 16px;
+    }
+}
+
+@media(min-width: 992px){
+
+    .grid{
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-gap: 16px;
+
+        &--left{
+            grid-column-start: 2;
+            grid-column-end: 8;
+        }
+        
+        &--right{
+            grid-column-start: 9;
+            grid-column-end: 12;
+        }
+
+        &--full{
+            grid-column-start: 2;
+            grid-column-end: 12;
+            
+        }
+
+        &--max{
+            grid-column-start: 1;
+            grid-column-end: -1;
+        }
+    }
+
+}

@@ -1,0 +1,63 @@
+.cubesContent{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    perspective: 996px;
+    flex-direction: column;
+
+    &--first{
+        opacity:0;
+        transform: scale(1);
+        animation-name: titleTrans;
+        animation-delay: .5s;
+        animation-duration: .6s;
+        animation-fill-mode: forwards;
+    }
+
+    @media(min-width: 992px){
+
+        &--row{
+            flex-direction: row;
+            gap: 5em;
+        }
+
+        
+    }
+
+    & > * {
+        margin-bottom: 16px;
+    }
+
+    &__img{
+        width: 100%;
+        margin: 0 auto;
+        max-width: 400px;
+        transform: rotateX(0deg) rotateY(321deg);
+        transform-style: preserve-3d;
+        transition: .5s;
+
+
+        @media(min-width: 992px){
+            margin: 0;
+
+            &:hover{
+                transform: rotateY(330deg);
+            }
+        }
+    }
+
+}
+
+@keyframes titleTrans{
+    0%{
+        opacity:0;
+        transform: scale(0.5);
+    }
+    100%{
+        opacity:1;
+        transform: scale(1);
+    }
+}

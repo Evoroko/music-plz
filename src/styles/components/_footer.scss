@@ -1,0 +1,45 @@
+.footer{
+    background-color: #08152675;
+
+    &__container{
+        padding: 32px 16px;
+        display: flex;
+        flex-direction: column;
+        max-width: 240px;
+        margin: auto;
+        
+        @media(min-width: 992px){
+            max-width: 976px;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        @media(min-width: 1232px){
+            max-width: 1200px;
+        }
+    }
+
+    &__column{
+
+        & > *{
+            margin-bottom: 16px;
+        }
+    
+        &--mobile{
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 32px;
+
+            @media(min-width: 992px){
+                width: 450px;
+                margin-bottom: 16px;
+            }
+        }
+    }
+}
+
+.linksList{
+    &__el{
+        margin-bottom: 8px;
+    }
+}

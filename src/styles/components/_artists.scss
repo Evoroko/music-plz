@@ -1,0 +1,137 @@
+.artistsSection{
+    display: flex;
+    flex-direction: column;
+
+    @media(min-width: 992px){
+        flex-direction: row;
+    }
+}
+
+.artist{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    transition: 0.1s;
+    cursor: pointer;
+    
+    filter: grayscale(95%) sepia(66%) brightness(98%) hue-rotate(161deg) saturate(237%);
+    -webkit-filter: grayscale(95%) sepia(66%) brightness(98%) hue-rotate(161deg) saturate(237%);
+    -moz-filter: grayscale(95%) sepia(66%) brightness(98%) hue-rotate(161deg) saturate(237%);
+
+    @media(min-width: 992px){
+        height: 450px;
+        align-items: flex-end;
+        padding: 16px;
+    }
+
+    &::before{
+        content: "";
+        background-color: rgba(0, 0, 0, 0.404);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 2;
+
+        @media(min-width: 992px){
+            top: 0;            
+        }
+    }
+
+    &__content{
+        display: none;
+    }
+
+    &:hover{
+        transform: scale(1.08);
+        z-index: 10;
+        transition: 0.3s;
+        filter: none;
+        -webkit-filter: none;
+        -moz-filter: none;
+
+        &::before{
+            background-color: rgba(0, 0, 0, 0.171);
+            transition: 0.3s;
+        }
+
+        
+
+        .artist__content{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.69);
+            width: 100%;
+            height: max-content;
+            padding: 16px;
+            box-sizing: border-box;
+            top: 100%;
+            z-index: 20;
+            pointer-events: none;
+
+            & > * {
+                margin-bottom: 8px;
+            }
+
+            @media(min-width: 992px){
+                height: 100%;
+                bottom: auto;
+                justify-content: center;
+                top: 0;
+                &--right{
+                    left: 100%;
+                }
+    
+                &--left{
+                    right: 100%;
+                }
+            }
+
+            
+        }
+    }
+
+    &__title{
+        position: relative;
+        z-index: 3;
+    }
+
+    &--olafur{
+        background-image: url(../assets/images/olafur@1x.jpg);
+
+        @media(-webkit-device-pixel-ratio: 2){
+            background-image: url(../assets/images/olafur@2x.jpg);
+        }
+    }
+
+    &--anoushka{
+        background-image: url(../assets/images/artist__anoushka@1x.jpg);
+        background-position: center 30%;
+
+        @media(-webkit-device-pixel-ratio: 2){
+            background-image: url(../assets/images/artist__anoushka@2x.jpg);
+        }
+    }
+
+    &--jean-michel{
+        background-image: url(../assets/images/artist__jean-michel@1x.jpg);
+        background-position: center 20%;
+
+        @media(-webkit-device-pixel-ratio: 2){
+            background-image: url(../assets/images/artist__jean-michel@2x.jpg);
+        }
+    }
+
+    &--isobel{
+        background-image: url(../assets/images/artist__isobel@1x.jpg);
+        background-position: center 20%;
+
+        @media(-webkit-device-pixel-ratio: 2){
+            background-image: url(../assets/images/artist__isobel@2x.jpg);
+        }
+    }
+}

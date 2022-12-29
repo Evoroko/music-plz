@@ -1,0 +1,305 @@
+@keyframes scaleBump {
+    0% {transform: scale(0.5);}
+    50% {transform: scale(1.1);}
+    100% {transform: scale(1);}
+}
+
+@keyframes slideRight {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-50%);}
+}
+
+@keyframes slideLeft {
+    0% {transform: translateX(50%);}
+    100% {transform: translateX(0);}
+}
+
+.album__el--animRightReverse{
+    animation-name: slideRight;
+    animation-duration: .2s;
+    animation-direction: reverse;
+    animation-timing-function: ease-in;
+}
+
+
+.album__el--animLeft{
+    animation-name: slideLeft;
+    animation-duration: .2s;
+}
+
+.player{
+    position: absolute;
+    left: calc(50% - 32px);
+    top: calc(50% - 32px);
+    z-index: 20;
+    height: 0;
+    width: 0;
+    background-image: url(../assets/images/btn__play.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    
+
+    &--play{
+        background-image: url(../assets/images/btn__pause.svg);
+    }
+
+    &--block{
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        width: 64px;
+        height: 64px;
+    }
+}
+
+.album{
+    position: relative;
+
+    &__btn{
+        display: none;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    
+
+    &__title, &__song{
+        height: 0;
+        width: 0;
+        transform: translateX(-30px);
+        opacity: 0;
+    }
+
+    &__el{
+        background-size: cover;
+        position: relative;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        max-width: 500px;
+        background-position: center;
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        height: 0;
+        width: 0;
+        cursor: pointer;
+    
+        &::before{
+            content: "";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.553);
+            z-index: 2;
+        }
+
+        &--focus{
+            width: 100%;
+            height: 500px;
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            cursor: default;
+
+            & .album__title, & .album__song{
+                opacity: 1;
+                height: auto;
+                width: auto;
+                transition-delay: .2s;
+                transition: .5s;
+                transform: translateX(0px);
+            }
+
+            & .album__song{
+                transition-delay: .1s;
+            }
+    
+            & .player{
+                animation-name: scaleBump;
+                animation-duration: .5s;
+                height: 64px;
+                width: 64px;
+                display: block;
+                z-index: 4;
+                opacity: 1;
+                visibility: visible;
+                pointer-events: all;
+            }
+        }
+    
+        
+    
+        &--variations{
+            background-image: url(../assets/images/cover__variations@1x.jpg);
+
+            @media(-webkit-device-pixel-ratio: 2){
+                background-image: url(../assets/images/cover__variations@2x.jpg);
+            }
+        }
+    
+        &--livingroom{
+            background-image: url(../assets/images/cover__livingroom@1x.jpg);
+
+            @media(-webkit-device-pixel-ratio: 2){
+                background-image: url(../assets/images/cover__livingroom@2x.jpg);
+            }
+        }
+    
+        &--winter{
+            background-image: url(../assets/images/cover__winter@1x.jpg);
+
+            @media(-webkit-device-pixel-ratio: 2){
+                background-image: url(../assets/images/cover__winter@2x.jpg);
+            }
+        }
+    
+        &--broadchurch{
+            background-image: url(../assets/images/cover__broadchurch@1x.jpg);
+
+            .album__title{
+                overflow: hidden;
+            }
+
+            @media(-webkit-device-pixel-ratio: 2){
+                background-image: url(../assets/images/cover__broadchurch@2x.jpg);
+            }
+        }
+    
+        &--remember{
+            background-image: url(../assets/images/cover__remember@1x.jpg);
+
+            @media(-webkit-device-pixel-ratio: 2){
+                background-image: url(../assets/images/cover__remember@2x.jpg);
+            }
+        }
+    
+        &--somekind{
+            background-image: url(../assets/images/cover@1x.jpg);
+
+            @media(-webkit-device-pixel-ratio: 2){
+                background-image: url(../assets/images/cover@2x.jpg);
+            }
+        }
+    }
+
+    &__title, &__song{
+        position: relative;
+        z-index: 3;
+    }
+
+    &__title{
+        padding: 0 16px 0 16px;
+        font-size: 28px;
+        margin-bottom: 4px;
+    }
+
+    &__song{
+        padding: 0 0 16px 16px;
+    }
+
+    &__status{
+        display: flex;
+        justify-content: center;
+        margin: 16px 0;
+        gap: 1em;
+
+        @media(min-width: 992px){
+            margin-top: 64px;
+        }
+    }
+
+    &__current{
+        width: 8px;
+        height: 8px;
+        border: 1px solid $c-text;
+
+        &--focus{
+            background-color: $c-text;
+        }
+    }
+}
+
+    
+
+
+
+
+
+@media(min-width: 992px){
+    .album{
+        margin-top: 32px;
+        display: flex;
+        z-index: 11;
+
+        &__btn{
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+            display: block;
+            position: absolute;
+            top: 45%;
+            z-index: 10;
+            width: 32px;
+            height: 29px;
+            padding-top: 3px;
+            border: 1px solid white;
+            user-select: none;
+            text-align: center;
+            font-weight: 700;
+
+            &--prev{
+                left: 0;
+            }
+
+            &--next{
+                right: 0;
+            }
+        }
+
+        &__el{
+            width: auto;
+            flex-grow: 1;
+            transition: .3s;
+            height: 400px;
+            max-width: 400px;
+                    
+            opacity: 1;
+            visibility: visible;
+            pointer-events: all;
+    
+            &--focus{
+                display: flex;
+                width: 400px;
+                z-index: 3;
+                transform: scale(1.1);
+    
+                &::before{
+                    background-color: rgba(0, 0, 0, 0.295);
+                }
+            }
+        }
+
+        &__slide{
+            height: 80%;
+            background-color: rgba(0, 0, 0, 0.485);
+            width: 300px;
+            position: absolute;
+            right: -228px;
+            bottom: 50%;
+            transform: translateY(50%);
+            z-index: 11;
+        }
+    }
+}
